@@ -61,7 +61,8 @@
                 goosrc.classList.add('one');
             }
             var language = (navigator.languages[0] || navigator.language || navigator.browserLanguage).toLowerCase();
-            if (language != 'zh-tw') {
+            var lang = language.split('-').shift();
+            if (lang != 'zh') {
                 document.querySelector('#desc').textContent = 'Download the app and use it for login.';
             }
             var args = parameters();
@@ -70,7 +71,7 @@
                 .then(j => {
                     var e = j.filter(event => event.event_id == args.event_id).pop();
                     if (e != undefined) {
-                        document.querySelector('#event_id').textContent = e.display_name[language != 'zh-tw' ? 'en' : 'zh'];
+                        document.querySelector('#event_id').textContent = e.display_name[lang] || e.display_name["en"];
                     }
                 });
         }
