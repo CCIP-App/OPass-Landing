@@ -20,7 +20,7 @@
         <img id="icon" src="img/logo.png" />
         <div id="background">
             <h1>OPass</h1>
-            <h2></h2>
+            <h2 id="event_id"></h2>
             <p id='desc'>下載應用程式後，即可登入使用。</p>
             <div id="store">
                 <a href="#" id="goosrc"></a>
@@ -60,11 +60,19 @@
                 appsrc.style.display = 'none';
                 goosrc.classList.add('one');
             }
-
             var language = (navigator.languages[0] || navigator.language || navigator.browserLanguage).toLowerCase();
             if (language != 'zh-tw') {
-                document.getElementById('desc').textContent = 'Download the app and use it for login.';
+                document.querySelector('#desc').textContent = 'Download the app and use it for login.';
             }
+            var args = parameters();
+            fetch("https://portal.opass.app/events/")
+                .then(t => t.json())
+                .then(j => {
+                    var e = j.filter(event => event.event_id == args.event_id).pop();
+                    if (e != undefined) {
+                        document.querySelector('#event_id').textContent = e.display_name[language != 'zh-tw' ? 'en' : 'zh'];
+                    }
+                });
         }
     </script>
     <noscript>
