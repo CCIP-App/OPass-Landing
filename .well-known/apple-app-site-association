@@ -7,7 +7,7 @@
         "appID": "9UZ879Y8DL.app.opass.ccip",
         "paths": [
           "NOT /_/*",
-          "/app/*"
+          "/open/*"
         ]
       }
     ]
