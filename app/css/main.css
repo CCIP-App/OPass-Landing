@@ -1,0 +1,139 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(45deg, rgba(48, 248, 145, 0.15) 0%, rgba(61, 146, 56, 0.04) 75%, rgba(96, 167, 48, 0) 100%);
+    background-position: center bottom;
+    transform: translateZ(0);
+    perspective: 1000;
+}
+
+#block {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#background {
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: 200px;
+    border: 1px solid rgba(238, 238, 238, 0.1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.90) 0%, rgba(238, 238, 238, 0.5) 100%);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, .1);
+    border-radius: 7px;
+    z-index: 1;
+    overflow: hidden;
+    padding-top: 40px;
+}
+
+#icon {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 80px;
+    transform: translate(-50%, 0%);
+    height: auto;
+    z-index: 2;
+}
+
+h1 {
+    color: rgb(74, 74, 74);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0px 0px;
+}
+
+p {
+    color: rgb(74, 74, 74);
+    text-align: center;
+}
+
+#store {
+    color: rgb(74, 74, 74);
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+#goosrc {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 47px;
+    background-image: url('../img/google-play-badge.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0px;
+}
+
+#goosrc.one {
+    width: 100%;
+}
+
+#appsrc {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 47px;
+    background-image: url('../img/app-store-badge.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0px;
+}
+
+#appsrc.one {
+    width: 100%;
+}
+
+#iosLogin {
+    display: none;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: #3d983c;
+}
+
+#websrc {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: #3d983c;
+}
+
+#background-opass {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-image: url('../img/opass-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+}
+
+@media screen and (max-width: 640px) {
+    #background-coscup {
+        background-image: url('../img/opass-bg-mobile.svg');
+        background-size: auto 110%;
+    }
+}
