@@ -16,7 +16,24 @@ http {
   server_tokens off;
   more_set_headers "Server: OPass-Landing-Server";
 
-  log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id fwd=$http_x_forwarded_for real=$realip';
+  map $http_x_forwarded_for $realip {
+    default $remote_addr;
+    ~^([^,]+) $1;
+  }
+  map $http_cf_connecting_ip $connip {
+    default $realip;
+    ~^(.*) $1;
+  }
+  map $http_cf_ipcountry $country {
+    default "n/a";
+    ~^(.*) $1;
+  }
+  map $http_cf_ray $ray {
+    default "n/a";
+    ~^(.*) $1;
+  }
+
+  log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id ray=$ray ip=$connip geo=$country fwd=$http_x_forwarded_for';
   access_log logs/nginx/access.log l2met;
   error_log logs/nginx/error.log;
 
@@ -29,11 +46,6 @@ http {
 
   # disable absolute redirect for preventing to redirect a location include heroku internal port
   absolute_redirect off;
-
-  map $http_x_forwarded_for $realip {
-    ~^([^,]+) $1;
-    default $remote_addr;
-  }
 
   server {
     listen <%= ENV["PORT"] %>;
