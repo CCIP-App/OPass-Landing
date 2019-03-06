@@ -14,8 +14,9 @@ http {
   gzip_min_length 512;
 
   server_tokens off;
+  more_set_headers "Server: OPass-Landing-Server";
 
-  log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id';
+  log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id fwd=$http_x_forwarded_for real=$http_x_real_ip';
   access_log logs/nginx/access.log l2met;
   error_log logs/nginx/error.log;
 
@@ -31,7 +32,7 @@ http {
 
   server {
     listen <%= ENV["PORT"] %>;
-    server_name _;
+    server_name opass.app staging.opass.app;
     keepalive_timeout 5;
     client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 1 %>M;
 
