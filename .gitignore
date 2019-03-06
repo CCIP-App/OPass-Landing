@@ -61,6 +61,7 @@ typings/
 .next
 
 *.swp
+/.build/
 /dist/
 _site/
 .sass-cache/
