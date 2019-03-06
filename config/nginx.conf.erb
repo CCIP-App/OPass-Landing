@@ -54,6 +54,17 @@ http {
     client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 1 %>M;
 
     root /app/public; # path to your app
+
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        internal;
+    }
+
     location /.well-known/apple-app-site-association {
         default_type application/json;
     }
