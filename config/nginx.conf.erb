@@ -32,6 +32,7 @@ http {
     default "n/a";
     ~^(.*) $1;
   }
+  include allowed.conf;
 
   log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id ray=$ray ip=$connip geo=$country fwd=$http_x_forwarded_for';
   access_log logs/nginx/access.log l2met;
@@ -55,7 +56,7 @@ http {
 
     root /app/public; # path to your app
 
-    error_page 404 /404.html;
+    error_page 404 451 /404.html;
     location = /404.html {
         internal;
     }
@@ -68,5 +69,7 @@ http {
     location /.well-known/apple-app-site-association {
         default_type application/json;
     }
+
+    include locations.conf;
   }
 }

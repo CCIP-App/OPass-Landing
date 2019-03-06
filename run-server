@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "$0" )" && pwd )
+PATH=$DIR/sbin:$PATH
+TARGET=${DIR}/config
+
+erb "${TARGET}/allowed.conf.erb" > "${TARGET}/allowed.conf"
+erb "${TARGET}/locations.conf.erb" > "${TARGET}/locations.conf"
+
+exec $*

@@ -1,0 +1,10 @@
+<%
+require 'json'
+allowed = JSON.parse(ENV['ALLOWED_ORIGIN'] || "[]")
+allowed.each do | ao |
+    name = ao["name"]
+    ao["path"].each do | path |
+%>    location <%=path%> {
+      if ( $aw_<%=name%> = "deny" ) { return 451; }
+    }<% end
+end %>

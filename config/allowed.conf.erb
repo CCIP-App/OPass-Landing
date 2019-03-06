@@ -1,0 +1,10 @@
+<%
+require 'json'
+allowed = JSON.parse(ENV['ALLOWED_ORIGIN'] || "[]")
+allowed.each do | ao |
+    name = ao["name"]
+    ao["path"].each do | path | %>  map $connip $aw_<%=name%> {
+    default deny;
+<% ao["ip"].each do | ip | %>    ~\s*<%=ip%>$ allow;
+<% end %>  }<% end
+end %>
