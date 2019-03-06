@@ -3,11 +3,6 @@
 DIR=$( cd "$( dirname "$0" )" && pwd )
 TARGET=${DIR}/.build
 
-mkdir -p "${TARGET}/public"
+mkdir -p "${TARGET}"
 
-cp -R config "${TARGET}/"
-cp Procfile "${TARGET}/"
-cp -R .well-known "${TARGET}/public/"
-cp -R open "${TARGET}/public/"
-cp *.html "${TARGET}/public/"
-cp favicon.ico "${TARGET}/public/"
+cp -R {public,config,Procfile} "${TARGET}/"
