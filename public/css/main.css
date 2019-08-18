@@ -1,17 +1,19 @@
 html{
-    height: 100%;
     min-height:100%;
 }
 
 body {
-
-    height: 100%;
-    background: linear-gradient(45deg, rgba(48, 248, 145, 0.15) 0%, rgba(61, 146, 56, 0.04) 75%, rgba(96, 167, 48, 0) 100%);
+    min-height:100%;
+    height:auto;
+    background: linear-gradient(90deg, rgba(48, 248, 145, 0.15) 0%, rgba(61, 146, 56, 0.04) 100%, rgba(96, 167, 48, 1) 120%);
 }
 
 .ui.container {
-    height: 100%;
     width:70%;
+}
+
+.footer {
+    padding:5% 0% 3% 0%;
 }
 
 .ui.main.segment {
@@ -21,7 +23,11 @@ body {
     transform: translate(-50%, -90%);
     -webkit-transform: translate(-50%, -90%);
     width:70%;
-    height: 50%;
+    height: 550px;
+}
+
+.ui.segment {
+    height: 200px;
 }
 .ui.sec {
     position: absolute;
@@ -30,7 +36,7 @@ body {
     transform: translate(-50%, 30%);
     -webkit-transform: translate(-50%, 30%);
     width:70%;
-    height: 35%;
+    height: 350px;
 }
 
 .horizontal.divider {
