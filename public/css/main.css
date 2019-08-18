@@ -38,3 +38,8 @@ body {
     height:47%;
     left:37%;
 }
+@media screen and (max-width: 900px){
+.ui.vertical.divider{
+display:none;
+}
+}
