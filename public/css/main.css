@@ -10,31 +10,24 @@ body {
 
 
 .footer {
-    padding:5% 0% 2% 0%;
+    padding:3em 0% 0% 0%;
 }
 
 .ui.main.segment {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -90%);
-    -webkit-transform: translate(-50%, -90%);
-    height: 550px;
+    top: 2em;
+    min-height:400px;
 }
 
 .ui.segment {
     height: 200px;
 }
 .ui.sec {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 30%);
-    -webkit-transform: translate(-50%, 30%);
-    height: 350px;
+    margin-top:1em;
 }
 
-.horizontal.divider {
+.container.horizontal.divider {
+    padding:4em 0 0 0;
+    margin-bottom:0;
 }
 
 #icon {
