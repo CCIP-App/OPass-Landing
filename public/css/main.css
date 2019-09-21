@@ -1,33 +1,32 @@
 html{
-    min-height:100%;
+    min-height: 100%;
 }
 
 body {
-    min-height:100%;
-    height:auto;
+    min-height: 100%;
+    height: auto;
     background: linear-gradient(90deg, rgba(48, 248, 145, 0.15) 0%, rgba(61, 146, 56, 0.04) 100%, rgba(96, 167, 48, 1) 120%);
 }
 
-
 .footer {
-    padding:3em 0% 0% 0%;
+    padding: 3em 0% 0% 0%;
 }
 
 .ui.main.segment {
     top: 2em;
-    min-height:400px;
+    min-height: 400px;
 }
 
 .ui.segment {
     height: 200px;
 }
 .ui.sec {
-    margin-top:1em;
+    margin-top: 1em;
 }
 
 .container.horizontal.divider {
-    padding:4em 0 0 0;
-    margin-bottom:0;
+    padding: 4em 0 0 0;
+    margin-bottom: 0;
 }
 
 #icon {
@@ -35,11 +34,12 @@ body {
 }
 
 .ui.vertical.divider {
-    height:47%;
-    left:37%;
+    height: 47%;
+    left: 37%;
 }
+
 @media screen and (max-width: 900px){
-.ui.vertical.divider{
-display:none;
-}
+    .ui.vertical.divider{
+        display: none;
+    }
 }
