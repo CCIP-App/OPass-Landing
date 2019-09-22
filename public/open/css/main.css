@@ -103,37 +103,13 @@ p {
     width: 100%;
 }
 
-#iosLogin {
-    display: none;
-    width: 100%;
-    font-size: 18px;
-    text-align: center;
-    color: #3d983c;
-}
-
-#websrc {
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    text-align: center;
-    color: #3d983c;
-}
-
 #background-opass {
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-image: url('../img/opass-bg.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center center;
-}
-
-@media screen and (max-width: 640px) {
-    #background-coscup {
-        background-image: url('../img/opass-bg-mobile.svg');
-        background-size: auto 110%;
-    }
 }
