@@ -1,4 +1,4 @@
-html{
+html {
     min-height: 100%;
 }
 
@@ -8,34 +8,29 @@ body {
     background: linear-gradient(90deg, rgba(48, 248, 145, 0.15) 0%, rgba(61, 146, 56, 0.04) 100%, rgba(96, 167, 48, 1) 120%);
 }
 
-.footer {
-    padding: 3em 0% 0% 0%;
+* {
+    font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", wf_SegoeUI, "Segoe UI", Segoe, "Segoe WP", Tahoma, Verdana, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, 微軟正黑體, "LiHei Pro", "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto, "Helvetica Neue", "Hiragino Maru Gothic ProN", メイリオ, "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif
 }
 
-.ui.main.segment {
-    top: 2em;
-    min-height: 400px;
+.centerBox{
+    display: flex;
+    justify-content:center;
+    align-content:center;
 }
 
-.ui.segment {
-    height: 200px;
-}
-.ui.sec {
-    margin-top: 1em;
+.conference-use-card {
+    min-height: 200px;
 }
 
-.container.horizontal.divider {
-    padding: 4em 0 0 0;
-    margin-bottom: 0;
-}
-
-.ui.vertical.divider {
-    height: 47%;
-    left: 37%;
-}
-
-@media screen and (max-width: 900px){
-    .ui.vertical.divider{
-        display: none;
+@media only screen and (max-width: 767px) {
+    .conferences{
+        padding-left:1em !important;
+        padding-right:1em !important;
+    }
+    .angle.double.right.icon {
+        transform: rotate(90deg);
+    }
+    .ui.fluid.image{
+        width:50%;
     }
 }
