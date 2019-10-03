@@ -36,6 +36,11 @@ html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-userag
         transform: rotate(90deg);
     }
     .ui.fluid.image{
-        width: 50%;
+        width: 50vw;
+        height: 50vw;
+        object-fit: scale-down;
+    }
+    html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.fluid.image {
+        height: 50vw !important;
     }
 }
