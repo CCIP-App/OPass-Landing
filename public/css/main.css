@@ -12,7 +12,7 @@ body {
     font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", wf_SegoeUI, "Segoe UI", Segoe, "Segoe WP", Tahoma, Verdana, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, 微軟正黑體, "LiHei Pro", "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto, "Helvetica Neue", "Hiragino Maru Gothic ProN", メイリオ, "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif
 }
 
-.centerBox{
+.centerBox {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -27,20 +27,32 @@ html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-userag
     height: 100%;
 }
 
+html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) img[src*=".webp"] {
+    box-sizing: border-box;
+    padding-left: 100%;
+    background: url(//cdn.discordapp.com/attachments/468412959119638550/629321156033511444/safari-ie.png) left top no-repeat;
+    background-size: contain;
+    min-height: 150px;
+}
+
 @media only screen and (max-width: 767px) {
-    .conferences{
+    .conferences {
         padding-left: 1em !important;
         padding-right: 1em !important;
     }
     .angle.double.right.icon {
         transform: rotate(90deg);
     }
-    .ui.fluid.image{
+    .ui.fluid.image {
         width: 50vw;
         height: 50vw;
         object-fit: scale-down;
     }
     html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.fluid.image {
         height: 50vw !important;
+    }
+
+    html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) img[src*=".webp"] {
+        padding-left: 50vw !important;
     }
 }
