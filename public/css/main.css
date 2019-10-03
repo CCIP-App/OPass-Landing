@@ -22,6 +22,11 @@ body {
     min-height: 200px;
 }
 
+html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"] .ui.image {
+    /* for fix fucking ugly Apple Safari */
+    height: 100%;
+}
+
 @media only screen and (max-width: 767px) {
     .conferences{
         padding-left:1em !important;
