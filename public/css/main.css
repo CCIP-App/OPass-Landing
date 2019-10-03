@@ -14,23 +14,28 @@ body {
 
 .centerBox{
     display: flex;
-    justify-content:center;
-    align-content:center;
+    justify-content: center;
+    align-content: center;
 }
 
 .conference-use-card {
     min-height: 200px;
 }
 
+html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"] .ui.image {
+    /* for fix fucking ugly Apple Safari */
+    height: 100%;
+}
+
 @media only screen and (max-width: 767px) {
     .conferences{
-        padding-left:1em !important;
-        padding-right:1em !important;
+        padding-left: 1em !important;
+        padding-right: 1em !important;
     }
     .angle.double.right.icon {
         transform: rotate(90deg);
     }
     .ui.fluid.image{
-        width:50%;
+        width: 50%;
     }
 }
