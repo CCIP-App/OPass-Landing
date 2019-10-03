@@ -27,6 +27,14 @@ html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-userag
     height: 100%;
 }
 
+html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) img[src*=".webp"] {
+    box-sizing: border-box;
+    padding-left: 100%;
+    background: url(//cdn.discordapp.com/attachments/468412959119638550/629321156033511444/safari-ie.png) left top no-repeat;
+    background-size: contain;
+    min-height: 150px;
+}
+
 @media only screen and (max-width: 767px) {
     .conferences{
         padding-left: 1em !important;
@@ -42,5 +50,9 @@ html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-userag
     }
     html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.fluid.image {
         height: 50vw !important;
+    }
+
+    html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) img[src*=".webp"] {
+        padding-left: 50vw !important;
     }
 }
