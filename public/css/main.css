@@ -22,7 +22,7 @@ body {
     min-height: 200px;
 }
 
-html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"] .ui.image {
+html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.image {
     /* for fix fucking ugly Apple Safari */
     height: 100%;
 }
@@ -36,6 +36,11 @@ html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"] .ui.image {
         transform: rotate(90deg);
     }
     .ui.fluid.image{
-        width: 50%;
+        width: 50vw;
+        height: 50vw;
+        object-fit: scale-down;
+    }
+    html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.fluid.image {
+        height: 50vw !important;
     }
 }
