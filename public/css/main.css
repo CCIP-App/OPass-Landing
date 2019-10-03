@@ -22,7 +22,7 @@ body {
     min-height: 200px;
 }
 
-html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"] .ui.image {
+html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.image {
     /* for fix fucking ugly Apple Safari */
     height: 100%;
 }
