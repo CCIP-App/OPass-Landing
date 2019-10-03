@@ -76,7 +76,7 @@ p {
     vertical-align: top;
     width: 50%;
     height: 47px;
-    background-image: url('../img/google-play-badge.svg');
+    background-image: url('/img/google-play-badge.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -92,7 +92,7 @@ p {
     vertical-align: top;
     width: 50%;
     height: 47px;
-    background-image: url('../img/app-store-badge.svg');
+    background-image: url('/img/app-store-badge.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
