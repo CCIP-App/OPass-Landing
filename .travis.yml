@@ -1,25 +1,22 @@
-sudo: false
+os: linux
+dist: focal
 language: go
 go:
-  - 1.11.x
+  - 1.14.x
+git:
+  depth: 1
 branches:
   only:
   - master
 env:
   - GO111MODULE=on
-# before_install:
-#   - GO111MODULE=off go get gopkg.in/mikefarah/yq.v2
-# addons:
-#   apt:
-#     update: true
-#     packages:
-#     - jq
 script:
   - ./build.sh
 deploy:
+  strategy: git
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  token: $GITHUB_TOKEN
   fqdn: opass.app
   local_dir: .build/
   on:
