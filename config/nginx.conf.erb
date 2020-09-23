@@ -71,7 +71,8 @@ http {
     }
 
     location ~* ^/r/(?P<event_id>[^/]+)/(?P<token>[^/]+)/?$ {
-      return 302 https://dl.opass.app/?link=https%3A%2F%2Fopass.app%2Fopen%2F%3Fevent_id%3D${event_id}%26token%3D${token}&isi=1436417025&ibi=app.opass.ccip&apn=app.opass.ccip&amv=<%= ENV['AMV'] || 40%>&efr=1;
+      set $open_url https%3A%2F%2Fopass.app%2Fopen%2F%3Fevent_id%3D${event_id}%26token%3D${token};
+      return 302 https://dl.opass.app/?link=${open_url}&ifl=${open_url}&isi=1436417025&ibi=app.opass.ccip&apn=app.opass.ccip&amv=<%= ENV['AMV'] || 40%>&efr=1;
     }
 
     include locations.conf;
