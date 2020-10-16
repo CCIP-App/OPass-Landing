@@ -56,3 +56,42 @@ html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-userag
         padding-left: 50vw !important;
     }
 }
+
+#store {
+    color: rgb(74, 74, 74);
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+#goosrc {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 47px;
+    background-image: url('/img/google-play-badge.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0;
+}
+
+#goosrc.one {
+    width: 100%;
+}
+
+#appsrc {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 47px;
+    background-image: url('/img/app-store-badge.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0;
+}
+
+#appsrc.one {
+    width: 100%;
+}

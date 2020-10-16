@@ -9,6 +9,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-itunes-app" content="app-id=1436417025, app-argument=" />
+    <meta name="google-play-app" content="app-id=app.opass.ccip" />
 
     <!-- OG -->
     <meta property="og:title" content="About OPass" />
@@ -36,6 +38,7 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-123104581-5');
+
     </script>
 </head>
 
@@ -64,6 +67,34 @@
                 </div>
             </div>
         </div>
+
+        <h4 class="ui horizontal container divider header">
+            <i class="cloud download icon"></i> Download Now
+        </h4>
+
+        <div id="store">
+            <a href="#" id="goosrc"></a>
+            <a href="#" id="appsrc"></a>
+        </div>
+        <script charset="utf-8">
+      window.onload = function () {
+        var appsrc = document.getElementById('appsrc');
+        var goosrc = document.getElementById('goosrc');
+        appsrc.setAttribute('href', 'https://itunes.apple.com/app/id' + document.querySelector('meta[name="apple-itunes-app"]').content.split(',').shift().trim().split('=').pop().trim());
+        goosrc.setAttribute('href', 'https://play.google.com/store/apps/details?id=' + document.querySelector('meta[name="google-play-app"]').content.split('=').pop());
+        var mobile = {
+          iOS: navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
+          Android: navigator.userAgent.match(/Android/i) ? true : false
+        };
+        if (mobile.iOS) {
+          goosrc.style.display = 'none';
+          appsrc.classList.add('one');
+        } else if (mobile.Android) {
+          appsrc.style.display = 'none';
+          goosrc.classList.add('one');
+        }
+      }
+        </script>
 
         <h4 class="ui horizontal container divider header">
             <i class="tag icon"></i> Conference Use
