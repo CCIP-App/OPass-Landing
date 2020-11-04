@@ -68,5 +68,7 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
+.DS_Store
+
 # auto-gen files
 config/*.conf
