@@ -132,12 +132,19 @@
                     </div>
                 </div>
             </div>
+
+            <h4 class="ui horizontal container divider header">
+                <i class="info circle icon"></i>
+                OPass 2016 - {{nowYear}} |
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </h4>
         </div>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
+                nowYear: new Date().getFullYear(),
                 usedConf: [
                     {
                         icon: "/img/conferences/coscup.webp",
