@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <title>About OPass | OPass</title>
-
     <!-- Meatadata -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-itunes-app" content="app-id=1436417025, app-argument=" />
     <meta name="google-play-app" content="app-id=app.opass.ccip" />
-
     <!-- OG -->
     <meta property="og:title" content="About OPass" />
     <meta property="og:url" content="https://opass.app/" />
@@ -23,25 +19,20 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="OPass 是整合活動資訊的解決方案，報到、活動時程、大會公告…等第一手資訊盡在 OPass！" />
     <meta property="og:site_name" content="OPass" />
-
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
     <link rel="stylesheet" href="/css/main.css" />
-
     <!-- JS -->
     <script src="/js/ua.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123104581-5"></script>
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-123104581-5"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-123104581-5');
-
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-123104581-5');
     </script>
 </head>
-
 <body>
     <div class="ui container">
         <div class="ui stackable segment grid">
@@ -77,23 +68,23 @@
             <a href="#" id="appsrc"></a>
         </div>
         <script charset="utf-8">
-      window.onload = function () {
-        var appsrc = document.getElementById('appsrc');
-        var goosrc = document.getElementById('goosrc');
-        appsrc.setAttribute('href', 'https://itunes.apple.com/app/id' + document.querySelector('meta[name="apple-itunes-app"]').content.split(',').shift().trim().split('=').pop().trim());
-        goosrc.setAttribute('href', 'https://play.google.com/store/apps/details?id=' + document.querySelector('meta[name="google-play-app"]').content.split('=').pop());
-        var mobile = {
-          iOS: navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
-          Android: navigator.userAgent.match(/Android/i) ? true : false
-        };
-        if (mobile.iOS) {
-          goosrc.style.display = 'none';
-          appsrc.classList.add('one');
-        } else if (mobile.Android) {
-          appsrc.style.display = 'none';
-          goosrc.classList.add('one');
+        window.onload = function () {
+            var appsrc = document.getElementById('appsrc');
+            var goosrc = document.getElementById('goosrc');
+            appsrc.setAttribute('href', 'https://itunes.apple.com/app/id' + document.querySelector('meta[name="apple-itunes-app"]').content.split(',').shift().trim().split('=').pop().trim());
+            goosrc.setAttribute('href', 'https://play.google.com/store/apps/details?id=' + document.querySelector('meta[name="google-play-app"]').content.split('=').pop());
+            var mobile = {
+                iOS: navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
+                Android: navigator.userAgent.match(/Android/i) ? true : false
+            };
+            if (mobile.iOS) {
+                goosrc.style.display = 'none';
+                appsrc.classList.add('one');
+            } else if (mobile.Android) {
+                appsrc.style.display = 'none';
+                goosrc.classList.add('one');
+            }
         }
-      }
         </script>
 
         <h4 class="ui horizontal container divider header">
@@ -101,7 +92,6 @@
         </h4>
 
         <div class="ui stackable grid conferences">
-
             <div class="eight wide column">
                 <div class="ui stackable segment grid conference-use-card">
                     <div class="one wide"></div>
@@ -291,7 +281,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
