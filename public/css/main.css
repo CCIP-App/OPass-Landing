@@ -43,6 +43,13 @@ html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-userag
     html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.fluid.image {
         height: 50vw !important;
     }
+    h4.ui.divider.header {
+        white-space: pre;
+    }
+}
+
+#app {
+    padding-bottom: 20px;
 }
 
 #store {
