@@ -22,6 +22,10 @@ body {
     min-height: 200px;
 }
 
+.footer {
+    margin-bottom: 25px;
+}
+
 html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.image {
     /* for fix fucking ugly Apple Safari */
     height: 100%;
