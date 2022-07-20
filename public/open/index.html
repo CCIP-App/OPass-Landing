@@ -20,6 +20,7 @@
             <h1>OPass</h1>
             <h2 id="event_id"></h2>
             <p id="desc">下載應用程式後，即可登入使用。</p>
+            <img id="qr" />
             <div id="store">
                 <a href="#" id="goosrc"></a>
                 <a href="#" id="appsrc"></a>
@@ -70,6 +71,16 @@
                     var e = j.filter(event => event.event_id == args.event_id).pop();
                     if (e != undefined) {
                         document.querySelector('#event_id').textContent = e.display_name[lang] || e.display_name["en"];
+                        if (args.token.length > 0) {
+                            var qr = document.querySelector('#qr');
+                            qr.setAttribute("src", `https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=${args.token}`);
+                            if (lang != 'zh') {
+                                document.querySelector('#desc').innerHTML += '<br/>Or you can provide this QR Code to scan by Event.'
+                            } else {
+                                document.querySelector('#desc').innerHTML += '<br/>或您也可以提供這個 QR Code 給大會掃描。'
+                            }
+                            document.querySelector('#block').classList.add("qr");
+                        }
                     }
                 });
         }

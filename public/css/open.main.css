@@ -23,6 +23,10 @@ body {
     -webkit-transform: translate(-50%, -50%);
 }
 
+#block.qr {
+    height: 500px;
+}
+
 #background {
     position: absolute;
     top: 40px;
@@ -37,6 +41,10 @@ body {
     padding-top: 40px;
 }
 
+#block.qr #background {
+    height: 390px;
+}
+
 #icon {
     position: absolute;
     top: 0;
@@ -45,6 +53,15 @@ body {
     transform: translate(-50%, 0%);
     height: auto;
     z-index: 2;
+}
+
+#block #background #qr {
+    position: relative;
+    left: calc(50% - (150px / 2));
+    display: none;
+}
+#block.qr #background #qr {
+    display: block;
 }
 
 h1 {
