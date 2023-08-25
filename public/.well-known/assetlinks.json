@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.opass.ccip",
+      "sha256_cert_fingerprints": [
+        "7C:7E:29:73:FD:E2:D7:7B:E2:F4:E9:5B:BE:16:B8:27:8A:F5:14:43:DA:DE:C6:E9:61:9A:90:D8:7A:0F:FA:C9"
+      ]
+    }
+  }
+]
