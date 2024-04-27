@@ -73,7 +73,7 @@
                         document.querySelector('#event_id').textContent = e.display_name[lang] || e.display_name["en"];
                         if (args.token.length > 0) {
                             var qr = document.querySelector('#qr');
-                            qr.setAttribute("src", `https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=${args.token}`);
+                            qr.setAttribute("src", `https://quickchart.io/qr?text=${args.token}`);
                             if (lang != 'zh') {
                                 document.querySelector('#desc').innerHTML += '<br/>Or you can provide this QR Code to scan by Event.'
                             } else {
