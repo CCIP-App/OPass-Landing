@@ -48,6 +48,32 @@
                 </div>
                 <div class="ten wide column">
                     <div class="ui basic segment">
+                    <h4 class="ui horizontal container divider header">
+                        <i class="cloud download icon"></i> Download Now
+                    </h4>
+                    <div id="store">
+                        <a href="#" id="goosrc"></a>
+                        <a href="#" id="appsrc"></a>
+                    </div>
+                    <script charset="utf-8">
+                    window.onload = function () {
+                        var appsrc = document.getElementById('appsrc');
+                        var goosrc = document.getElementById('goosrc');
+                        appsrc.setAttribute('href', 'https://itunes.apple.com/app/id' + document.querySelector('meta[name="apple-itunes-app"]').content.split(',').shift().trim().split('=').pop().trim());
+                        goosrc.setAttribute('href', 'https://play.google.com/store/apps/details?id=' + document.querySelector('meta[name="google-play-app"]').content.split('=').pop());
+                        var mobile = {
+                            iOS: navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
+                            Android: navigator.userAgent.match(/Android/i) ? true : false
+                        };
+                        if (mobile.iOS) {
+                            goosrc.style.display = 'none';
+                            appsrc.classList.add('one');
+                        } else if (mobile.Android) {
+                            appsrc.style.display = 'none';
+                            goosrc.classList.add('one');
+                        }
+                    }
+                    </script>
                         <h1 class="ui header">OPass</h1>
                         <p>OPass 是整合活動資訊的解決方案，報到、活動時程、大會公告…等第一手資訊盡在 OPass！</p>
                         <p>OPass 原本是是為了台灣開源資訊社群研討會所開發的報到 App，在 SITCON 學生計算機年會及 COSCUP 開源人年會已多次使用，為了各活動的使用需求便啟動了整合計畫，成為了 OPass 大平台來繼續提供給大家最好的報到體驗，並提供第一手的年會資訊。</p>
@@ -61,32 +87,6 @@
                 </div>
             </div>
 
-            <h4 class="ui horizontal container divider header">
-                <i class="cloud download icon"></i> Download Now
-            </h4>
-            <div id="store">
-                <a href="#" id="goosrc"></a>
-                <a href="#" id="appsrc"></a>
-            </div>
-            <script charset="utf-8">
-            window.onload = function () {
-                var appsrc = document.getElementById('appsrc');
-                var goosrc = document.getElementById('goosrc');
-                appsrc.setAttribute('href', 'https://itunes.apple.com/app/id' + document.querySelector('meta[name="apple-itunes-app"]').content.split(',').shift().trim().split('=').pop().trim());
-                goosrc.setAttribute('href', 'https://play.google.com/store/apps/details?id=' + document.querySelector('meta[name="google-play-app"]').content.split('=').pop());
-                var mobile = {
-                    iOS: navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
-                    Android: navigator.userAgent.match(/Android/i) ? true : false
-                };
-                if (mobile.iOS) {
-                    goosrc.style.display = 'none';
-                    appsrc.classList.add('one');
-                } else if (mobile.Android) {
-                    appsrc.style.display = 'none';
-                    goosrc.classList.add('one');
-                }
-            }
-            </script>
 
             <h4 class="ui horizontal container divider header">
                 <i class="tag icon"></i> Conference Use
