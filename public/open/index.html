@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OPass</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-itunes-app" content="app-id=1436417025, app-argument=" />
+    <meta name="google-play-app" content="app-id=app.opass.ccip" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="//necolas.github.io/normalize.css/5.0.0/normalize.css" />
+    <link rel="stylesheet" href="/css/open.main.css" />
+    <script src="/js/ua.js"></script>
+</head>
+<body style="overflow: hidden;">
+    <div id="block">
+        <img id="icon" src="/img/logo.png" />
+        <div id="background">
+            <h1>OPass</h1>
+            <h2 id="event_id"></h2>
+            <p id="desc">下載應用程式後，即可登入使用。</p>
+            <img id="qr" />
+            <div id="store">
+                <a href="#" id="goosrc"></a>
+                <a href="#" id="appsrc"></a>
+            </div>
+        </div>
+    </div>
+    <div id="background-opass"></div>
+    <script>
+        function parameters() {
+            return location.search.split('?').pop().split('&').map(function(p) {
+                var ps = p.split('=');
+                var o = {};
+                o[ps.shift()] = ps.join('=');
+                return o;
+            }).reduce(function(a, b) {
+                var o = a;
+                for (var k in b) {
+                    o[k] = b[k];
+                }
+                return o;
+            });
+        }
+        window.onload = function () {
+            var appsrc = document.getElementById('appsrc');
+            var goosrc = document.getElementById('goosrc');
+            appsrc.setAttribute('href', 'https://itunes.apple.com/app/id' + document.querySelector('meta[name="apple-itunes-app"]').content.split(',').shift().trim().split('=').pop().trim());
+            goosrc.setAttribute('href', 'https://play.google.com/store/apps/details?id=' + document.querySelector('meta[name="google-play-app"]').content.split('=').pop());
+            var mobile = {
+                iOS: navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
+                Android: navigator.userAgent.match(/Android/i) ? true : false
+            };
+            if (mobile.iOS) {
+                goosrc.style.display = 'none';
+                appsrc.classList.add('one');
+            } else if (mobile.Android) {
+                appsrc.style.display = 'none';
+                goosrc.classList.add('one');
+            }
+            var language = (navigator.languages[0] || navigator.language || navigator.browserLanguage).toLowerCase();
+            var lang = language.split('-').shift();
+            if (lang != 'zh') {
+                document.querySelector('#desc').textContent = 'Download the app and use it for login.';
+            }
+            var args = parameters();
+            fetch("https://portal.opass.app/events/")
+                .then(t => t.json())
+                .then(j => {
+                    var e = j.filter(event => event.event_id == args.event_id).pop();
+                    if (e != undefined) {
+                        document.querySelector('#event_id').textContent = e.display_name[lang] || e.display_name["en"];
+                        if (args.token.length > 0) {
+                            var qr = document.querySelector('#qr');
+                            qr.setAttribute("src", `https://quickchart.io/qr?text=${args.token}`);
+                            if (lang != 'zh') {
+                                document.querySelector('#desc').innerHTML += '<br/>Or you can provide this QR Code to scan by Event.'
+                            } else {
+                                document.querySelector('#desc').innerHTML += '<br/>或您也可以提供這個 QR Code 給大會掃描。'
+                            }
+                            document.querySelector('#block').classList.add("qr");
+                        }
+                    }
+                });
+        }
+    </script>
+    <noscript>
+        <center>如有任何問題 請打開 JavaScript 和 關閉廣告攔截</center>
+        <center>If any problem, please enable JavaScript and turn off any AD blocker.</center>
+    </noscript>
+</body>
+</html>
