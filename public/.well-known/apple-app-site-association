@@ -1,7 +1,6 @@
 {
   "applinks": {
-    "apps": [
-    ],
+    "apps": [],
     "details": [
       {
         "appID": "9UZ879Y8DL.app.opass.ccip",
@@ -10,6 +9,11 @@
           "/open/*"
         ]
       }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "9UZ879Y8DL.app.opass.ccip"
     ]
   }
 }
