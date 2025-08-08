@@ -1,0 +1,92 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    height: auto;
+    background: linear-gradient(90deg, rgba(48, 248, 145, 0.15) 0%, rgba(61, 146, 56, 0.04) 100%, rgba(96, 167, 48, 1) 120%);
+}
+
+* {
+    font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", wf_SegoeUI, "Segoe UI", Segoe, "Segoe WP", Tahoma, Verdana, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", 微軟正黑體, "LiHei Pro", "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto, "Hiragino Maru Gothic ProN", メイリオ, "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif;
+}
+
+.centerBox {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.conference-use-card {
+    min-height: 200px;
+}
+
+html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.image {
+    /* for fix fucking ugly Apple Safari */
+    height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    .conferences {
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
+    .angle.double.right.icon {
+        transform: rotate(90deg);
+    }
+    .ui.fluid.image {
+        width: 50vw;
+        height: 50vw;
+        object-fit: scale-down;
+    }
+    html[data-useragent*="AppleWebKit/"][data-useragent*="Safari/"]:not([data-useragent*="Chrome/"]) .ui.fluid.image {
+        height: 50vw !important;
+    }
+    h4.ui.divider.header {
+        white-space: pre;
+    }
+}
+
+#app {
+    padding-bottom: 20px;
+}
+
+#store {
+    color: rgb(74, 74, 74);
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+#goosrc {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 47px;
+    background-image: url('/img/google-play-badge.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0;
+}
+
+#goosrc.one {
+    width: 100%;
+}
+
+#appsrc {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 47px;
+    background-image: url('/img/app-store-badge.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0;
+}
+
+#appsrc.one {
+    width: 100%;
+}
